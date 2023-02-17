@@ -222,8 +222,7 @@ header {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 350px;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1.25rem;
   margin-top: 3.12rem;
   margin-bottom: 1.25rem;
@@ -231,18 +230,27 @@ header {
 
 .grid-item {
   position: relative;
+  -o-object-fit: cover;
+  object-fit: cover;
   overflow: hidden;
   font-size: .9rem;
   transition: all .7s;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+}
+
+.grid-item-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  display: block;
+  transition: all 1s;
 }
 
 .grid-item-description {
-  margin-top: 100px;
+  padding: 100px;
+  position: absolute;
   background-color: #000000ef;
-  top: 18.75rem;
+  top: 6.25rem;
   height: 100%;
   width: 100%;
   opacity: 0;
