@@ -49,3 +49,17 @@ document.getElementById("Top").addEventListener("click", function() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 })
+
+
+const button = document.getElementById("hamburger");
+const div = document.getElementById("menu-div");
+div.style.display="none"
+
+button.addEventListener("click", function() {
+    if (div.style.display === "none") {
+    div.style.display = "flex";
+  } else {
+    div.style.display = "none";
+  }
+
+});
