@@ -1,5 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px var(--ref-color); 
+  border-radius: 15px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--ref-color-alt); 
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--alt-color);
+}
+
 * {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -25,6 +47,7 @@ body {
 body::after {
   content: "";
   background: url("../images/bg-night.jpg");
+  background-attachment: fixed;
   filter: blur(3px);
   -webkit-filter: blur(3px);
   transform: scale(1.1);
@@ -75,7 +98,7 @@ header {
   overflow: hidden;
 }
 
-.navbar li a {
+.navbar .menu li a {
   display: flex;
   color: var(--ref-color);
   align-items: center;
@@ -87,11 +110,11 @@ header {
   position: relative;
 }
 
-.nav-opt {
+.menu .nav-opt {
   cursor: pointer;
 }
 
-.nav-opt::before {
+.menu .nav-opt::before {
   content: "";
   position: absolute;
   bottom: 15px;
@@ -103,14 +126,24 @@ header {
   transition: all ease-in-out 0.2s;
 }
 
-.nav-opt:hover::before {
+.menu .nav-opt:hover::before {
   width: 100%;
   /* or 100px */
   transition: 0.6s;
 }
 
-.navbar .menu-hamb {
+.menu-hamb {
   display: none;
+  align-items: center;
+  gap: 3rem;
+  text-decoration: none;
+  justify-content: center;
+  background-color: var(--main-color);
+  border-radius: 6px;
+  position: absolute;
+  width:90%;
+  margin: 0 auto;
+  z-index: 1;
 }
 
 .hamburger-menu-hidden {
@@ -224,8 +257,8 @@ header {
   display: flex;
   justify-content: center;
   font-size: var(--fz-mx);
-  margin-top: 22%;
-  margin-bottom: 5%;
+  margin-top: 20vw;
+  margin-bottom: 2%;
 }
 
 .grid-container {
@@ -233,7 +266,7 @@ header {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1.25rem;
   margin-top: 3.12rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 8vw;
 }
 
 .grid-item {
@@ -255,7 +288,7 @@ header {
 }
 
 .grid-item-description {
-  padding: 80px;
+  padding: 50px;
   position: absolute;
   background-color: #000000ef;
   top: 6.25rem;
@@ -284,7 +317,7 @@ header {
   top: 0;
   opacity: 0;
   color: var(--alt-color);
-  font-size: 1.4vw;
+  font-size: 1.6vw;
 }
 
 .grid-item:hover .webname {
@@ -293,9 +326,9 @@ header {
 }
 
 .webdesc {
-  margin-bottom: 40px;
+  margin: 1vw;
   opacity: 0;
-  font-size: 0.8vw;
+  font-size: 1vw;
   color: var(--alt-color);
 }
 
@@ -307,8 +340,8 @@ header {
 .bt-cont {
   margin-top: 5%;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
   bottom: 20%;
   opacity: 0;
 }
@@ -321,6 +354,7 @@ header {
   margin: auto;
   background: var(--main-color);
   color: var(--ref-color);
+  font-size: 0.9vw;
   padding: 5px 10px;
   font-family: Poppins, sans-serif;
 }
@@ -340,7 +374,7 @@ header {
 
 .footer-cont {
   display: flex;
-  margin-top: 20%;
+  margin-top: 15vw;
   width: 100%;
   flex-direction: column;
   align-items: center;
@@ -454,21 +488,38 @@ header {
     padding: 150px;
     grid-template-columns: 1fr;
     gap: 3.12rem;
-    margin-top: 3.12rem;
+    margin-top: -6rem;
     margin-bottom: 0;
   }
 
   .cont-text-about {
     margin-left: 0px;
     width: 65%;
-}
+  }
+
+  .text-projects{
+    margin-top: 10vw;
+  }
+
+ .footer-cont{
+  margin-top: 5vw;
+ }
 
 }
+/*:::::1000px:::::*/
 
 @media (max-width: 1000px) {
 
   body {
     padding: 20px 20vw;
+  }
+
+  .grid-item-description{
+    padding: 10px;
+  }
+
+  .bt-cont{
+    bottom: 5%;
   }
 
   .navbar .menu {
@@ -482,7 +533,10 @@ header {
   .hamburger-menu-hidden {
     display: flex;
   }
+
 }
+
+/*:::::Mobile:::::*/
 
 @media (max-width: 768px) {
 
@@ -502,6 +556,22 @@ header {
     margin-top: -3rem;
     padding: 75px;
     gap: 1.5rem;
+  }
+
+  .grid-item-description {
+    padding: 50px;
+  }
+
+  .bt-repo {
+    font-size: 1.6vw;
+  }
+
+  .webname {
+    font-size: 2.5vw;
+  }
+
+  .webdesc {
+    font-size: 1.5vw;
   }
 
   .footer-cont {
@@ -525,8 +595,8 @@ header {
   }
 
   :root {
-    --fz-sm: 2vw;
-    --fz-mx: 3vw;
-    --fz-x: 4vw;
+    --fz-sm: 2.4vw;
+    --fz-mx: 4.3vw;
+    --fz-x: 5vw;
   }
 }

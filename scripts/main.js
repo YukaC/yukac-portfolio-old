@@ -1,45 +1,51 @@
+document.getElementById("ToAboutMeMB").addEventListener("touchend", function() {
+  scrollToElement("AboutMe");
+});
+
+document.getElementById("ToProjectsMB").addEventListener("touchend", function() {
+  scrollToElement("Projects");
+});
+
+document.getElementById("ToContactMB").addEventListener("touchend", function() {
+  scrollToElement("Contact");
+});
+
+function scrollToElement(elementId) {
+  var element = document.getElementById(elementId);
+  var windowHeight = window.innerHeight;
+  var halfWindowHeight = windowHeight / 2.8;
+  var offset = element.getBoundingClientRect().top - halfWindowHeight;
+  window.scroll({
+    top: offset,
+    behavior: "smooth"
+  });
+}
+
+
 document.getElementById("ToAboutMe").addEventListener("click", function() {
-    // Buscar el elemento que deseas centrar en la pantalla
-    var element = document.getElementById("AboutMe");
-  
-    // Calcular la posición de desplazamiento para centrar el elemento en la pantalla
-    var offset = element.getBoundingClientRect().top - (window.innerHeight / 2.8);
-  
-    // Realizar un scroll suave a la posición de desplazamiento
-    window.scroll({
-      top: offset,
-      behavior: "smooth"
-    });
-  });
-  
-  document.getElementById("ToProjects").addEventListener("click", function() {
-    // Buscar el elemento que deseas centrar en la pantalla
-    var element = document.getElementById("Projects");
-  
-    // Calcular la posición de desplazamiento para centrar el elemento en la pantalla
-    var offset = element.getBoundingClientRect().top - (window.innerHeight / 4);
-  
-    // Realizar un scroll suave a la posición de desplazamiento
-    window.scroll({
-      top: offset,
-      behavior: "smooth"
-    });
-  });
-  
-  document.getElementById("ToContact").addEventListener("click", function() {
-    // Buscar el elemento que deseas centrar en la pantalla
-    var element = document.getElementById("Contact");
-  
-    // Calcular la posición de desplazamiento para centrar el elemento en la pantalla
-    var offset = document.documentElement.scrollHeight - window.innerHeight;
-    window.scrollTo(0, offset);
-  
-    // Realizar un scroll suave a la posición de desplazamiento
-    window.scroll({
-      top: offset,
-      behavior: "smooth"
-    });
-  });
+  scrollToElement("AboutMe");
+});
+
+document.getElementById("ToProjects").addEventListener("click", function() {
+  scrollToElement("Projects");
+});
+
+document.getElementById("ToContact").addEventListener("click", function() {
+  scrollToElement("Contact");
+});
+
+document.getElementById("ToAboutMeMB").addEventListener("click", function() {
+  scrollToElement("AboutMe");
+});
+
+document.getElementById("ToProjectsMB").addEventListener("click", function() {
+  scrollToElement("Projects");
+});
+
+document.getElementById("ToContactMB").addEventListener("click", function() {
+  scrollToElement("Contact");
+});
+
 
 // Get the button:
 let mybutton = document.getElementById("Top");
@@ -53,13 +59,36 @@ document.getElementById("Top").addEventListener("click", function() {
 
 const button = document.getElementById("hamburger");
 const div = document.getElementById("menu-div");
-div.style.display="none"
+div.style.display = "none";
 
 button.addEventListener("click", function() {
-    if (div.style.display === "none") {
+  if (div.style.display === "none") {
     div.style.display = "flex";
   } else {
     div.style.display = "none";
   }
-
 });
+
+window.addEventListener("resize", function() {
+  if (window.innerWidth > 1000) {
+    div.style.display = "none";
+  }
+});
+
+
+// Crear el observador de intersección
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    // Si el elemento ya no es visible en la pantalla
+    if (!entry.isIntersecting) {
+      // Ocultar el elemento
+      entry.target.style.display = "none";
+    }
+  });
+});
+
+// Obtener el elemento a observar
+const elementoAObservar = document.getElementById("menu-div");
+
+// Observar el elemento
+observer.observe(elementoAObservar);
