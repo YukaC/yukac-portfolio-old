@@ -134,26 +134,54 @@ header {
 
 .menu-hamb {
   display: none;
+  flex-direction: column;
   align-items: center;
-  gap: 3rem;
+  padding: 30px;
+  gap: 2.5rem;
   text-decoration: none;
   justify-content: center;
   background-color: var(--main-color);
   border-radius: 6px;
-  position: absolute;
-  width:90%;
   margin: 0 auto;
   z-index: 1;
+}
+
+.menu-hamb li:hover {
+  cursor: pointer;
+  filter: opacity(0.7);
+  transform: scale(1.02);
+  filter: drop-shadow(0px 0px 0.2rem var(--alt-color));
 }
 
 .hamburger-menu-hidden {
   display: none;
 }
 
-.hamburger-menu-hidden:hover {
-  transition: all .5s;
-  color: var(--alt-color);
-  filter: drop-shadow(0px 0px 0.5rem var(--alt-color));
+.drop-cont {
+  position: relative;
+  display: inline-block;
+}
+
+.drop-cont select {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--ref-color);
+  cursor: pointer;
+}
+
+.drop-cont select option {
+  border-radius: 50%;
+  background-color: var(--main-color);
+}
+
+.drop-cont select:hover {
+  filter: opacity(0.7);
+  transform: scale(1.02);
+  filter: drop-shadow(0px 0px 0.2rem var(--alt-color));
 }
 
 /*:::::Home Section:::::*/
@@ -231,7 +259,7 @@ header {
   font-size: var(--fz-mx);
 }
 
-.cont-text-about h4 {
+.cont-text-about p {
   font-weight: 500;
   color: var(--ref-color);
   font-size: var(--fz-sm);
@@ -479,6 +507,10 @@ header {
 
 @media (max-width: 1440px) {
 
+  .text-home h4 {
+    font-size: var(--fz-m);
+  }
+
   #AboutMe{
     flex-direction: column;
     text-align: center;
@@ -494,7 +526,11 @@ header {
 
   .cont-text-about {
     margin-left: 0px;
-    width: 65%;
+    width: 74%;
+  }
+
+  .cont-text-about p {
+    font-size: var(--fz-m);
   }
 
   .text-projects{
@@ -504,6 +540,14 @@ header {
  .footer-cont{
   margin-top: 5vw;
  }
+
+ .box-contact p{
+  font-size: var(--fz-m);
+ }
+ 
+ :root{
+  --fz-m: 1.25vw;
+}
 
 }
 /*:::::1000px:::::*/
@@ -533,7 +577,6 @@ header {
   .hamburger-menu-hidden {
     display: flex;
   }
-
 }
 
 /*:::::Mobile:::::*/

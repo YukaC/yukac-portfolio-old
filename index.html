@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
     <head>
         <link type="text/css" rel="stylesheet" href="styles/style.css">
         <link rel="shortcut icon" href="images/favicon.png">
@@ -7,17 +7,24 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-        <title>Agustin Ciucani - Web Developer</title>
+        <script src="https://kit.fontawesome.com/0f45821323.js" crossorigin="anonymous"></script>
+        <title data-text="pageTitle">Agustin Ciucani - Web Developer</title>
     </head>
     <body>
         <header>
             <div class="navbar">
                 <img class="logoWeb" id="logo" src="images/logo-white.png" />
                 <ul class="menu">
-                    <li><a class="nav-opt" id="ToAboutMe">About Me</a></li>
-                    <li><a class="nav-opt" id="ToProjects">Projects</a></li>
-                    <li><a class="nav-opt" id="ToContact">Contact</a></li>
+                    <li><a class="nav-opt" id="ToAboutMe" data-text="navAbt">About Me</a></li>
+                    <li><a class="nav-opt" id="ToProjects" data-text="navPjs">Projects</a></li>
+                    <li><a class="nav-opt" id="ToContact" data-text="navCtc">Contact</a></li>
+                    <div class="drop-cont">
+                        <i class="fa-solid fa-globe fa-lg"></i>
+                        <select id="lang-selector">
+                            <option value="en">English</option>
+                            <option value="es">Español</option>
+                        </select>
+                    </div>
                 </ul>
 
                 <div class="hamburger-menu-hidden"  id="hamburger">
@@ -28,17 +35,23 @@
         </header>
 
         <ul class="menu-hamb" id="menu-div">
-            <li><a class="nav-opt" id="ToAboutMeMB">About Me</a></li>
-            <li><a class="nav-opt" id="ToProjectsMB">Projects</a></li>
-            <li><a class="nav-opt" id="ToContactMB">Contact</a></li>
+            <li><a class="nav-opt" id="ToAboutMeMB" data-text="navAbt">About Me</a></li>
+            <li><a class="nav-opt" id="ToProjectsMB" data-text="navPjs">Projects</a></li>
+            <li><a class="nav-opt" id="ToContactMB" data-text="navCtc">Contact</a></li>
+            <div class="drop-cont">
+                <i class="fa-solid fa-globe fa-sm"></i>
+                <select id="lang-selector">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                </select>
+            </div>
         </ul>
         <div class="text-home">
-            <h1>I'm Agustin Ciucani</h1>
-            <h4>This is my official portfolio website to showcase all my works related to web development</h4>
-
+            <h1 data-text="homeTitle">Hi, I'm Agustin Ciucani</h1>
+            <h4 data-text="homeSubtitle">This is my official portfolio website to showcase all my works related to web development</h4>
             <div class="cont-resume">
-                <h4>Download my Resume here:</h4>
-                <a class="bt-dw" role="button" href="docs/Agustín Ciucani Resume.pdf" download="Agustín Ciucani Resume.pdf">Download</a>
+                <h4 data-text="resumeText">Download my Resume here:</h4>
+                <a class="bt-dw" role="button" href="docs/Agustín Ciucani Resume.pdf" download="Agustín Ciucani Resume.pdf" data-text="resumeDw">Download</a>
             </div>
         </div>
 
@@ -48,34 +61,33 @@
             </div>
 
             <div class="cont-text-about">
-                <h1 class="text-about">About Me</h1>
-                <h4>Hello! My name is Agustin, a 20 years old programmer who currently lives in Buenos Aires, Argentina and enjoys creating things on the internet...<br>
+                <h1 class="text-about" data-text="aboutTitle">About Me</h1>
+                <p data-text="aboutText">Hello! My name is Agustin, a 20 years old programmer who currently lives in Buenos Aires, Argentina and enjoys creating things on the internet...<br>
                     I'm interested on learning and getting into the world of programming.<br>
                     Besides music, coding is my passion and hobby. Is because of that, that I'm always interested on learning and getting into the coding world.<br>
                     I'm always looking for learn and incorporate new technologies to my projects.<br>
                     My interest in web development started in 2020 when I get graduated from high school where I learned programming and since then,
                     I have learned a lot about HTML and CSS!
-                </h4>
+                </p>
             </div>
         </div>
 
-        <h1 class="text-projects" id="Projects">Portfolio</h1>
+        <h1 class="text-projects" id="Projects" data-text="portfolioTitle">Portfolio</h1>
 
         <div class="grid-container">
             <div class="grid-item">
                 <div>
                     <img class="grid-item-img" src="images/img1.png">
                         <div class="grid-item-description">
-                            <h1 class="webname">FastFood Website
+                            <h1 class="webname" data-text="project1Title">FastFood Website</h1>
                                 <h4 class="webdesc">Html,Css</h4>
                                 <div class="bt-cont">
                                     <a class="bt-repo" target="_blank" href="https://github.com/YukaC/Website">
                                         <i class="fab fa-github">
-                                            <span>Repository</span>
+                                            <span data-text="nameRepo">Repository</span>
                                         </i>
                                     </a>
                                 </div>
-                            </h1>
                         </div>
                 </div>
             </div>
@@ -84,16 +96,15 @@
                 <div>
                     <img class="grid-item-img" src="images/img2.png">
                         <div class="grid-item-description">
-                            <h1 class="webname">Movie Review Website
+                            <h1 class="webname" data-text="project2Title">Movie Review Website</h1>
                                 <h4 class="webdesc">Css,Javascript,Python,Flask</h4>
                                 <div class="bt-cont">
                                     <a class="bt-repo" target="_blank" href="https://github.com/YukaC/TrabajoFinal_Ciucani_Grecco">
                                         <i class="fab fa-github">
-                                            <span>Repository</span>
+                                            <span data-text="nameRepo">Repository</span>
                                         </i>
                                     </a>
                                 </div>
-                            </h1>
                         </div>
                 </div>
             </div>
@@ -102,16 +113,15 @@
                 <div>
                     <img class="grid-item-img" src="images/img3.png">
                         <div class="grid-item-description">
-                            <h1 class="webname">Portfolio
+                            <h1 class="webname" data-text="project3Title">Portfolio</h1>
                                 <h4 class="webdesc">Css,Fontawesome,Javascript</h4>
                                 <div class="bt-cont">
                                     <a class="bt-repo" target="_blank" href="https://github.com/YukaC/yukac.github.io">
                                         <i class="fab fa-github">
-                                            <span>Repository</span>
+                                            <span data-text="nameRepo">Repository</span>
                                         </i>
                                     </a>
                                 </div>
-                            </h1>
                         </div>
                 </div>
             </div>
@@ -120,18 +130,18 @@
         <footer class="footer-cont">
             <div class="contact-cont">
                 <div class="box-contact">
-                    <h2>Contact</h2>
-                    <p>Currently i'm looking for any new opportunities, my inbox is always open.<br>
+                    <h2 data-text="contactTitle">Contact</h2>
+                    <p data-text="contactText">Currently i'm looking for any new opportunities, my inbox is always open.<br>
                     Feel free to contact me and talk about a freelance job, or in a company, or just chat &#128517;</p>
                 </div>
 
                 <div class="box-social" id="Contact">
-                    <h2>Social</h2>
+                    <h2 data-text="contactSocial">Social</h2>
                     <div class="social">
-                        <a target="_blank" href="https://github.com/YukaC"><i class="fab fa-github"></i></a>
-                        <a target="_blank" href="https://www.linkedin.com/in/agust%C3%ADn-ciucani/"><i class="fab fa-linkedin"></i></a>
-                        <a target="_blank" href="https://www.instagram.com/yuka.mol/"><i class="fab fa-instagram"></i></a>
-                        <a target="_blank" href="mailto:agusyuk25@gmail.com"><i class="fab fa fa-envelope"></i></a>
+                        <a target="_blank" href="https://github.com/YukaC"><i class="fa-brands fa-github"></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/agust%C3%ADn-ciucani/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a target="_blank" href="https://www.instagram.com/yuka.mol/"><i class="fa-brands fa-instagram"></i></a>
+                        <a target="_blank" href="mailto:agusyuk25@gmail.com"><i class="fa-solid fa-envelope"></i></a>
                     </div>
                 </div>
             </div>
@@ -142,10 +152,11 @@
             </div>
 
             <div class="grupo-2">
-                <small>&copy; <script>document.write(new Date().getFullYear())</script> <b>Agustin Ciucani</b> -  All rights reserved.</small>
+                <small>&copy; <script>document.write(new Date().getFullYear())</script> <b data-text="copyright">Agustin Ciucani - All rights reserved.</b></small>
             </div>
         </footer>
 
         <script src="scripts/main.js"></script>
+        <script src="scripts/translate.js"></script>
     </body>
 </html>
