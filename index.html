@@ -11,152 +11,144 @@
         <title data-text="pageTitle">Agustin Ciucani - Web Developer</title>
     </head>
     <body>
-        <header>
-            <div class="navbar">
-                <img class="logoWeb" id="logo" src="images/logo-white.png" />
-                <ul class="menu">
-                    <li><a class="nav-opt" id="ToAboutMe" data-text="navAbt">About Me</a></li>
-                    <li><a class="nav-opt" id="ToProjects" data-text="navPjs">Projects</a></li>
-                    <li><a class="nav-opt" id="ToContact" data-text="navCtc">Contact</a></li>
-                    <div class="drop-cont">
-                        <i class="fa-solid fa-globe fa-lg"></i>
-                        <select id="lang-selector">
-                            <option value="en">English</option>
-                            <option value="es">Español</option>
-                        </select>
+        <div class="cont-main-body">
+            <header>
+                <div class="navbar">
+                    <img class="logoWeb" id="logo" src="images/logo-white.png" />
+                    <div class="cont-menu">
+                        <ul class="menu" id="menu-div">
+                            <li><a class="nav-opt" id="ToAboutMe" data-text="navAbt">About Me</a></li>
+                            <li><a class="nav-opt" id="ToProjects" data-text="navPjs">Projects</a></li>
+                            <li><a class="nav-opt" id="ToContact" data-text="navCtc">Contact</a></li>
+                            <div class="drop-cont">
+                                <i class="fa-solid fa-globe fa-sm"></i>
+                                <select id="lang-selector">
+                                    <option value="en">English</option>
+                                    <option value="es">Español</option>
+                                </select>
+                            </div>
+                        </ul>
                     </div>
-                </ul>
 
-                <div class="hamburger-menu-hidden"  id="hamburger">
-                    <li><i class="fa fa-bars fa-2x" style="margin-right: 4px;"></i></li>
+                    <div class="hamburger-menu-hidden"  id="hamburger">
+                        <li><i class="fa fa-bars fa-lg" style="margin-right: 4px;"></i></li>
+                    </div>
+
+                </div>
+            </header>
+            <div class="text-home">
+                <h1 data-text="homeTitle">Hi, I'm Agustin Ciucani</h1>
+                <h4 data-text="homeSubtitle">This is my official portfolio website to showcase all my works related to web development</h4>
+                <div class="cont-resume">
+                    <h4 data-text="resumeText">Download my Resume here:</h4>
+                    <a class="bt-dw" role="button" href="docs/Agustín Ciucani Resume.pdf" download="Agustín Ciucani Resume.pdf" data-text="resumeDw">Download</a>
+                </div>
+            </div>
+
+            <div id="AboutMe">
+                <div class="profile-cont">
+                    <img class="img-profile" src="images/profile-img.png">
                 </div>
 
+                <div class="cont-text-about">
+                    <h1 class="text-about" data-text="aboutTitle">About Me</h1>
+                    <p data-text="aboutText">Hello! My name is Agustin, a 20 years old programmer who currently lives in Buenos Aires, Argentina and enjoys creating things on the internet...<br>
+                        I'm interested on learning and getting into the world of programming.<br>
+                        Besides music, coding is my passion and hobby. Is because of that, that I'm always interested on learning and getting into the coding world.<br>
+                        I'm always looking for learn and incorporate new technologies to my projects.<br>
+                        My interest in web development started in 2020 when I get graduated from high school where I learned programming and since then,
+                        I have learned a lot about HTML and CSS!
+                    </p>
+                </div>
             </div>
-        </header>
+            <div class="portfolio-cont">
+                <h1 class="text-projects" id="Projects" data-text="portfolioTitle">Portfolio</h1>
 
-        <ul class="menu-hamb" id="menu-div">
-            <li><a class="nav-opt" id="ToAboutMeMB" data-text="navAbt">About Me</a></li>
-            <li><a class="nav-opt" id="ToProjectsMB" data-text="navPjs">Projects</a></li>
-            <li><a class="nav-opt" id="ToContactMB" data-text="navCtc">Contact</a></li>
-            <div class="drop-cont">
-                <i class="fa-solid fa-globe fa-sm"></i>
-                <select id="lang-selector">
-                    <option value="en">English</option>
-                    <option value="es">Español</option>
-                </select>
-            </div>
-        </ul>
-        <div class="text-home">
-            <h1 data-text="homeTitle">Hi, I'm Agustin Ciucani</h1>
-            <h4 data-text="homeSubtitle">This is my official portfolio website to showcase all my works related to web development</h4>
-            <div class="cont-resume">
-                <h4 data-text="resumeText">Download my Resume here:</h4>
-                <a class="bt-dw" role="button" href="docs/Agustín Ciucani Resume.pdf" download="Agustín Ciucani Resume.pdf" data-text="resumeDw">Download</a>
-            </div>
-        </div>
-
-        <div id="AboutMe">
-            <div class="profile-cont">
-                <img class="img-profile" src="images/profile-img.png">
-            </div>
-
-            <div class="cont-text-about">
-                <h1 class="text-about" data-text="aboutTitle">About Me</h1>
-                <p data-text="aboutText">Hello! My name is Agustin, a 20 years old programmer who currently lives in Buenos Aires, Argentina and enjoys creating things on the internet...<br>
-                    I'm interested on learning and getting into the world of programming.<br>
-                    Besides music, coding is my passion and hobby. Is because of that, that I'm always interested on learning and getting into the coding world.<br>
-                    I'm always looking for learn and incorporate new technologies to my projects.<br>
-                    My interest in web development started in 2020 when I get graduated from high school where I learned programming and since then,
-                    I have learned a lot about HTML and CSS!
-                </p>
-            </div>
-        </div>
-
-        <h1 class="text-projects" id="Projects" data-text="portfolioTitle">Portfolio</h1>
-
-        <div class="grid-container">
-            <div class="grid-item">
-                <div>
-                    <img class="grid-item-img" src="images/img1.png">
-                        <div class="grid-item-description">
-                            <h1 class="webname" data-text="project1Title">FastFood Website</h1>
-                                <h4 class="webdesc">Html,Css</h4>
-                                <div class="bt-cont">
-                                    <a class="bt-repo" target="_blank" href="https://github.com/YukaC/Website">
-                                        <i class="fab fa-github">
-                                            <span data-text="nameRepo">Repository</span>
-                                        </i>
-                                    </a>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <div>
+                            <img class="grid-item-img" src="images/img1.png">
+                                <div class="grid-item-description">
+                                    <h1 class="webname" data-text="project1Title">FastFood Website</h1>
+                                        <h4 class="webdesc">Html,Css</h4>
+                                        <div class="bt-cont">
+                                            <a class="bt-repo" target="_blank" href="https://github.com/YukaC/Website">
+                                                <i class="fa-brands fa-github">
+                                                    <span data-text="nameRepo">Repository</span>
+                                                </i>
+                                            </a>
+                                        </div>
                                 </div>
                         </div>
-                </div>
-            </div>
+                    </div>
 
-            <div class="grid-item">
-                <div>
-                    <img class="grid-item-img" src="images/img2.png">
-                        <div class="grid-item-description">
-                            <h1 class="webname" data-text="project2Title">Movie Review Website</h1>
-                                <h4 class="webdesc">Css,Javascript,Python,Flask</h4>
-                                <div class="bt-cont">
-                                    <a class="bt-repo" target="_blank" href="https://github.com/YukaC/TrabajoFinal_Ciucani_Grecco">
-                                        <i class="fab fa-github">
-                                            <span data-text="nameRepo">Repository</span>
-                                        </i>
-                                    </a>
+                    <div class="grid-item">
+                        <div>
+                            <img class="grid-item-img" src="images/img2.png">
+                                <div class="grid-item-description">
+                                    <h1 class="webname" data-text="project2Title">Movie Review Website</h1>
+                                        <h4 class="webdesc">Css,Javascript,Python,Flask</h4>
+                                        <div class="bt-cont">
+                                            <a class="bt-repo" target="_blank" href="https://github.com/YukaC/TrabajoFinal_Ciucani_Grecco">
+                                                <i class="fa-brands fa-github">
+                                                    <span data-text="nameRepo">Repository</span>
+                                                </i>
+                                            </a>
+                                        </div>
                                 </div>
                         </div>
-                </div>
-            </div>
+                    </div>
 
-            <div class="grid-item">
-                <div>
-                    <img class="grid-item-img" src="images/img3.png">
-                        <div class="grid-item-description">
-                            <h1 class="webname" data-text="project3Title">Portfolio</h1>
-                                <h4 class="webdesc">Css,Fontawesome,Javascript</h4>
-                                <div class="bt-cont">
-                                    <a class="bt-repo" target="_blank" href="https://github.com/YukaC/yukac.github.io">
-                                        <i class="fab fa-github">
-                                            <span data-text="nameRepo">Repository</span>
-                                        </i>
-                                    </a>
+                    <div class="grid-item">
+                        <div>
+                            <img class="grid-item-img" src="images/img3.png">
+                                <div class="grid-item-description">
+                                    <h1 class="webname" data-text="project3Title">Portfolio</h1>
+                                        <h4 class="webdesc">Css,Fontawesome,Javascript</h4>
+                                        <div class="bt-cont">
+                                            <a class="bt-repo" target="_blank" href="https://github.com/YukaC/yukac.github.io">
+                                                <i class="fa-brands fa-github">
+                                                    <span data-text="nameRepo">Repository</span>
+                                                </i>
+                                            </a>
+                                        </div>
                                 </div>
                         </div>
-                </div>
-            </div>
-        </div>
-
-        <footer class="footer-cont">
-            <div class="contact-cont">
-                <div class="box-contact">
-                    <h2 data-text="contactTitle">Contact</h2>
-                    <p data-text="contactText">Currently i'm looking for any new opportunities, my inbox is always open.<br>
-                    Feel free to contact me and talk about a freelance job, or in a company, or just chat &#128517;</p>
-                </div>
-
-                <div class="box-social" id="Contact">
-                    <h2 data-text="contactSocial">Social</h2>
-                    <div class="social">
-                        <a target="_blank" href="https://github.com/YukaC"><i class="fa-brands fa-github"></i></a>
-                        <a target="_blank" href="https://www.linkedin.com/in/agust%C3%ADn-ciucani/"><i class="fa-brands fa-linkedin"></i></a>
-                        <a target="_blank" href="https://www.instagram.com/yuka.mol/"><i class="fa-brands fa-instagram"></i></a>
-                        <a target="_blank" href="mailto:agusyuk25@gmail.com"><i class="fa-solid fa-envelope"></i></a>
                     </div>
                 </div>
             </div>
 
-            <div class="box-final">
-                <img src="images/logo-white.png" alt="Logo de Agustin Ciucani">
-                <a class="bt-up" id="Top" href="#"><i class="fa fa-arrow-circle-up fa-4x"></i>Top</a>
-            </div>
+            <footer class="footer-cont">
+                <div class="contact-cont">
+                    <div class="box-contact">
+                        <h2 data-text="contactTitle">Contact</h2>
+                        <p data-text="contactText">Currently i'm looking for any new opportunities, my inbox is always open.<br>
+                        Feel free to contact me and talk about a freelance job, or in a company, or just chat &#128517;</p>
+                    </div>
 
-            <div class="grupo-2">
-                <small>&copy; <script>document.write(new Date().getFullYear())</script> <b data-text="copyright">Agustin Ciucani - All rights reserved.</b></small>
-            </div>
-        </footer>
+                    <div class="box-social" id="Contact">
+                        <h2 data-text="contactSocial">Social</h2>
+                        <div class="social">
+                            <a target="_blank" href="https://github.com/YukaC"><i class="fa-brands fa-github"></i></a>
+                            <a target="_blank" href="https://www.linkedin.com/in/agust%C3%ADn-ciucani/"><i class="fa-brands fa-linkedin"></i></a>
+                            <a target="_blank" href="https://www.instagram.com/yuka.mol/"><i class="fa-brands fa-instagram"></i></a>
+                            <a target="_blank" href="mailto:agusyuk25@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
 
-        <script src="scripts/main.js"></script>
-        <script src="scripts/translate.js"></script>
+                <div class="cont-logo-up">
+                    <img src="images/logo-white.png" alt="Logo de Agustin Ciucani">
+                    <a class="bt-up" id="Top"><i class="fa fa-arrow-circle-up fa-3x"></i>Top</a>
+                </div>
+
+                <div class="grupo-2">
+                    <small>&copy; <script>document.write(new Date().getFullYear())</script> <b data-text="copyright">Agustin Ciucani - All rights reserved.</b></small>
+                </div>
+            </footer>
+
+            <script src="scripts/main.js"></script>
+            <script src="scripts/translate.js"></script>
+        </div>
     </body>
 </html>

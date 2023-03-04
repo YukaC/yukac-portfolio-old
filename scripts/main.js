@@ -1,14 +1,15 @@
-document.getElementById("ToAboutMeMB").addEventListener("touchend", function() {
-  scrollToElement("AboutMe");
-});
+const buttonHamb = document.getElementById("hamburger");
+const div = document.getElementById("menu-div");
 
-document.getElementById("ToProjectsMB").addEventListener("touchend", function() {
-  scrollToElement("Projects");
-});
+addScrollEvent("ToAboutMe", "AboutMe");
+addScrollEvent("ToProjects", "Projects");
+addScrollEvent("ToContact", "Contact");
 
-document.getElementById("ToContactMB").addEventListener("touchend", function() {
-  scrollToElement("Contact");
-});
+function addScrollEvent(elementId, targetId) {
+  document.getElementById(elementId).addEventListener("click", function() {
+    scrollToElement(targetId);
+  });
+}
 
 function scrollToElement(elementId) {
   var element = document.getElementById(elementId);
@@ -21,74 +22,51 @@ function scrollToElement(elementId) {
   });
 }
 
-
-document.getElementById("ToAboutMe").addEventListener("click", function() {
-  scrollToElement("AboutMe");
-});
-
-document.getElementById("ToProjects").addEventListener("click", function() {
-  scrollToElement("Projects");
-});
-
-document.getElementById("ToContact").addEventListener("click", function() {
-  scrollToElement("Contact");
-});
-
-document.getElementById("ToAboutMeMB").addEventListener("click", function() {
-  scrollToElement("AboutMe");
-});
-
-document.getElementById("ToProjectsMB").addEventListener("click", function() {
-  scrollToElement("Projects");
-});
-
-document.getElementById("ToContactMB").addEventListener("click", function() {
-  scrollToElement("Contact");
-});
-
-
-// Get the button:
-let mybutton = document.getElementById("Top");
-
-// When the user clicks on the button, scroll to the top of the document
 document.getElementById("Top").addEventListener("click", function() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-})
-
-
-const button = document.getElementById("hamburger");
-const div = document.getElementById("menu-div");
-div.style.display = "none";
-
-button.addEventListener("click", function() {
-  if (div.style.display === "none") {
-    div.style.display = "flex";
-  } else {
-    div.style.display = "none";
-  }
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
 window.addEventListener("resize", function() {
   if (window.innerWidth > 1000) {
-    div.style.display = "none";
+    div.style.display = "flex";
+  } else {
+    div.style.display = "none"
   }
 });
 
+function menu() {
+  
+  div.style.display = "none";
+  if (div.style.display === "none") {
+    div.style.display = "flex";
+    window.addEventListener("touchstart", menuCloseHandler);
+    document.addEventListener("click", menuCloseHandler);
+    window.addEventListener("scroll", scrollHandler);
+  } else {
+    div.style.display = "none";
+    window.removeEventListener("touchstart", menuCloseHandler);
+    document.removeEventListener("click", menuCloseHandler);
+    window.removeEventListener("scroll", scrollHandler);
+  }
+}
 
-// Crear el observador de intersección
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    // Si el elemento ya no es visible en la pantalla
-    if (!entry.isIntersecting) {
-      // Ocultar el elemento
-      entry.target.style.display = "none";
+function menuCloseHandler() {
+  const menuDiv = document.getElementById("menu-div");
+  document.addEventListener("click", function(event) {
+    const clickedElement = event.target;
+    if (clickedElement !== div && !buttonHamb.contains(clickedElement) && !menuDiv.contains(clickedElement)) {
+      menuDiv.style.display = "none";
+    } else {
+      menuDiv.style.display = "flex";
     }
   });
-});
+}
 
-// Obtener el elemento a observar
-const elementoAObservar = document.getElementById("menu-div");
+function scrollHandler() {
+  div.style.display = "none";
+  document.removeEventListener("touchstart", menuCloseHandler);
+  document.removeEventListener("mousedown", menuCloseHandler);
+  window.removeEventListener("scroll", scrollHandler);
+}
 
-// Observar el elemento
-observer.observe(elementoAObservar);
+buttonHamb.addEventListener("click", menu);
