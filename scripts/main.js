@@ -1,72 +1,36 @@
-const buttonHamb = document.getElementById("hamburger");
-const div = document.getElementById("menu-div");
+/*************************
+ * MENU SHOW / HIDE
+ */
+const menuButton = document.getElementById('hamburger'); // get menu hamburger button
+const menuContainer = document.getElementById('menu'); // get menu container
 
-addScrollEvent("ToAboutMe", "AboutMe");
-addScrollEvent("ToProjects", "Projects");
-addScrollEvent("ToContact", "Contact");
+menuButton.addEventListener("click", handleMenu); // Attach a listener to menu button
 
-function addScrollEvent(elementId, targetId) {
-  document.getElementById(elementId).addEventListener("click", function() {
-    scrollToElement(targetId);
-  });
+function handleMenu () {
+  menuContainer.classList.toggle('visible'); // Toggle visible class to menu container
 }
 
-function scrollToElement(elementId) {
-  var element = document.getElementById(elementId);
-  var windowHeight = window.innerHeight;
-  var halfWindowHeight = windowHeight / 2.8;
-  var offset = element.getBoundingClientRect().top - halfWindowHeight;
-  window.scroll({
-    top: offset,
-    behavior: "smooth"
-  });
-}
-
+/**************************
+ * TO TOP
+ */
 document.getElementById("Top").addEventListener("click", function() {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll window to top 0 Y coordinates
 });
 
-window.addEventListener("resize", function() {
-  if (window.innerWidth > 1000) {
-    div.style.display = "flex";
-  } else {
-    div.style.display = "none"
+/*************************
+ * SCROLL WINDOW EVENT
+ */
+document.addEventListener("scroll", (event) => { // Attach listener to scroll window event
+  if (menuContainer.classList.contains('visible')) { // Check if menu is visible
+    menuContainer.classList.remove('visible'); // If visible, the make it hidden by removing visible class
   }
-});
+})
 
-function menu() {
-  
-  div.style.display = "none";
-  if (div.style.display === "none") {
-    div.style.display = "flex";
-    window.addEventListener("touchstart", menuCloseHandler);
-    document.addEventListener("click", menuCloseHandler);
-    window.addEventListener("scroll", scrollHandler);
-  } else {
-    div.style.display = "none";
-    window.removeEventListener("touchstart", menuCloseHandler);
-    document.removeEventListener("click", menuCloseHandler);
-    window.removeEventListener("scroll", scrollHandler);
+/*************************
+ * RESIZE WINDOW EVENT
+ */
+window.addEventListener("resize", (event) => {
+  if (menuContainer.classList.contains('visible')) { // Check if menu is visible
+    menuContainer.classList.remove('visible'); // If visible, the make it hidden by removing visible class
   }
-}
-
-function menuCloseHandler() {
-  const menuDiv = document.getElementById("menu-div");
-  document.addEventListener("click", function(event) {
-    const clickedElement = event.target;
-    if (clickedElement !== div && !buttonHamb.contains(clickedElement) && !menuDiv.contains(clickedElement)) {
-      menuDiv.style.display = "none";
-    } else {
-      menuDiv.style.display = "flex";
-    }
-  });
-}
-
-function scrollHandler() {
-  div.style.display = "none";
-  document.removeEventListener("touchstart", menuCloseHandler);
-  document.removeEventListener("mousedown", menuCloseHandler);
-  window.removeEventListener("scroll", scrollHandler);
-}
-
-buttonHamb.addEventListener("click", menu);
+})
